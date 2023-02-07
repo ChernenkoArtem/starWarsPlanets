@@ -1,0 +1,8 @@
+<mat-form-field appearance="fill">
+  <mat-label>Planets</mat-label>
+  <mat-select [(value)]="selectedValue" (selectionChange)="selected($event)">
+    <mat-option *ngFor="let planetName of list" [value]="planetName">
+      {{planetName.name}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>

@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>People from this planet</h1>
+  <ng-container *ngIf="isNoPerson; else noPerson" >
+
+  </ng-container>
+  <div class="person-item" *ngFor="let person of personList">
+    <div>name:{{ person.name }} | height:{{person.height}} | birth year:{{person.birth_year}}</div>
+  </div>
+
+  <ng-template #noPerson>
+    <h1>No one person</h1>
+  </ng-template>
+</div>

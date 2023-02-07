@@ -1,1 +1,25 @@
-/* You can add global styles to this file, and also import other style files */
+@use "@angular/material" as mat;
+
+@include mat.core();
+
+$webApp-primary: mat.define-palette(mat.$indigo-palette);
+$webApp-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+@include mat.core();
+$webApp-warn: mat.define-palette(mat.$red-palette);
+
+$webApp-theme: mat.define-light-theme(
+    (
+      color: (
+        primary: $webApp-primary,
+        accent: $webApp-accent,
+        warn: $webApp-warn,
+      ),
+    )
+);
+
+@include mat.all-component-themes($webApp-theme);
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
